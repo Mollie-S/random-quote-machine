@@ -1,7 +1,11 @@
 import React from "react";
 
 function Header() {
-  return <header>Randome Quote Machine</header>;
+  return (
+    <header>
+      <h1>Randome Quote Machine</h1>
+    </header>
+  );
 }
 
 export default Header;
