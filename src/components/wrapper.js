@@ -1,23 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import TwitterImg from "../images/Twitter_Social_Icon_Rounded_Square_Color.png";
 
 function Wrapper() {
-  // const proxy = "https://cors-anywhere.herokuapp.com/";
-  const api = "https://api.paperquotes.com/apiv1/quotes/?lang=en";
+  const [quotation, setQuotation] = useState("hi");
+  const [author, setCharacter] = useState("author");
 
-  fetch(api, {
-    headers: {
-      Authorization: "Token{547e9ce1fd76c539001052061b1ec2b93c2b6aff}",
-    },
-  })
-    .then((request) => request.json())
-    .then((data) => console.log(data));
+  const handleClick = () => {
+    const proxy = "https://cors-anywhere.herokuapp.com/";
+    const api = `${proxy}https://thesimpsonsquoteapi.glitch.me/quotes?count=50`;
+
+    fetch(api)
+      .then((request) => request.json())
+      .then((data) => {
+        setQuotation(data[0].quote);
+        setCharacter(data[0].character);
+      });
+  };
 
   return (
     <div id="quote-box">
-      <h3 id="text">Text</h3>
-      <p id="author">author</p>
-      <a href="https://twitter.com/" id="tweet-quote">
+      <h3 id="text">{quotation}</h3>
+      <p id="author">{author}</p>
+      <a href="https://twitter.com/intent/tweet" id="tweet-quote">
         <img
           src={TwitterImg}
           alt="twitter_icon"
@@ -25,7 +29,9 @@ function Wrapper() {
         ></img>
       </a>
 
-      <button id="new-quote">New Quote</button>
+      <button id="new-quote" onClick={handleClick}>
+        New Quote
+      </button>
     </div>
   );
 }
