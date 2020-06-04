@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
   return (
     <header>
-      <h1>Randome Quote Machine</h1>
+      <h1>Random Quote Machine</h1>
     </header>
   );
 }
