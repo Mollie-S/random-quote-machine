@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import TwitterImg from "../images/Twitter_Social_Icon_Rounded_Square_Color.png";
+import TwitterImg from "../images/Twitter_Social_Icon_Square_White.png";
 
 function Wrapper() {
-  const [quotation, setQuotation] = useState("hi");
+  const [quotation, setQuotation] = useState(
+    "Inspiration moves one from Pessimism to Optimism, from Doubt to Faith, from Despair to Hope, and from Darkness to Light!"
+  );
   const [author, setCharacter] = useState("author");
 
   const handleClick = () => {
@@ -18,14 +20,15 @@ function Wrapper() {
   };
 
   return (
-    <div id="quote-box">
+    <div id="quote-box" className="flip-card">
       <h3 id="text">{quotation}</h3>
       <p id="author">{author}</p>
       <a href="https://twitter.com/intent/tweet" id="tweet-quote">
         <img
+          className="tweet-img"
           src={TwitterImg}
           alt="twitter_icon"
-          style={{ width: "1rem" }}
+          style={{ width: "2rem", filter: "grayscale(100%)" }}
         ></img>
       </a>
 
