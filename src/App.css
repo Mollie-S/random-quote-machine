@@ -41,15 +41,20 @@ header {
   border: 2px solid var(--font-color);
   border-radius: 5px;
   color: var(--font-color);
-  width: 35rem;
-  max-width: fit-content;
+  /* width: 35rem; */
+  width: 500px;
+  height: 300px;
+  /* max-width: fit-content;
+  max-height: fit-content; */
   display: grid;
-  grid-template-columns: 0.5fr 2fr 2fr 2fr 2fr 0.5fr;
-  grid-template-rows: 1fr 0.3fr 0.7fr;
+  grid-template-columns: 0.5fr 2fr 2fr 2.3fr 2fr 0.5fr;
+  grid-template-rows: 1fr 1fr 0.8fr;
 }
 
 #text {
   grid-column: 2/6;
+  font-size: 1.3rem;
+  text-align: center;
 }
 
 #tweet-quote {
@@ -57,16 +62,13 @@ header {
   grid-row: 3/4;
 }
 
-.tweet-img:hover {
-  width: 1rem;
-}
-
 #author {
-  grid-column: 5/6;
+  grid-column: 4/6;
   grid-row: 2/3;
   font-style: italic;
   font-weight: 150;
   font-size: 0.85rem;
+  text-align: center;
 }
 
 #new-quote {
@@ -79,11 +81,9 @@ header {
   font-size: 0.8rem;
   color: var(--main-bg-color);
   padding: 0;
-  transition: ease-in-out;
 }
 
 #new-quote:hover {
   width: 5.1rem;
   height: 2.1rem;
-  background-color: darkgrey;
 }
