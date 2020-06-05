@@ -44,8 +44,8 @@ header {
   /* width: 35rem; */
   width: 500px;
   height: 300px;
-  /* max-width: fit-content;
-  max-height: fit-content; */
+  max-width: fit-content;
+  max-height: fit-content;
   display: grid;
   grid-template-columns: 0.5fr 2fr 2fr 2.3fr 2fr 0.5fr;
   grid-template-rows: 1fr 1fr 0.8fr;
